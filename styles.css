@@ -1,0 +1,56 @@
+/* ============================================================
+   SURAKSHA NEPAL — custom styles
+   Most styling is done via Tailwind utility classes (loaded in
+   index.html). This file holds fonts, base resets and a few
+   small helpers that are easier to express in plain CSS.
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap");
+
+:root {
+  --sn-red: #e53935;
+  --sn-blue: #1e3a8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reusable heading font used by hero / marketing text */
+.font-display {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Thin, subtle scrollbars that fit the glass aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Respect reduced-motion preferences for the SOS ping animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ping {
+    animation: none !important;
+  }
+}
