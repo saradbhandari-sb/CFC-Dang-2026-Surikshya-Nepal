@@ -1,34 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suraksha Nepal — Citizen ⇄ Government Platform</title>
-
-    <!-- Tailwind (utility classes used throughout the JSX/JS) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Lucide icons as React components, exposed as global `LucideReact` -->
-    <script src="https://unpkg.com/lucide-react@0.460.0/dist/umd/lucide-react.js"></script>
-
-    <!-- React + ReactDOM (UMD builds) -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-    <!-- Recharts (depends on React) -->
-    <script src="https://unpkg.com/recharts@2/umd/Recharts.min.js"></script>
-
-    <!-- Babel so the JSX in app.js runs directly in the browser -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Our own styles -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- React mounts the whole UI here -->
-    <div id="root"></div>
-
-    <!-- App logic (JSX, transpiled in-browser by Babel) -->
-    <script type="text/babel" src="app.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dc143c">
+  <title>Surakshya Nepal | Your Safety, Our Priority</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="splash" class="splash" aria-label="Loading Surakshya Nepal">
+    <div class="mountains"></div><div class="flag-mark"><i></i><span>🇳🇵</span></div>
+    <div class="splash-copy"><p class="eyebrow">GOVERNMENT OF NEPAL</p><h1>SURAKSHYA <em>NEPAL</em></h1><p>Your Safety, Our Priority.</p><div class="loader"><b></b></div></div>
+  </div>
+  <main id="app"></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
 </html>
