@@ -1,0 +1,21 @@
+-- Run this only if you already imported an earlier version of database.sql.
+USE surakshya_nepal;
+
+ALTER TABLE users ADD COLUMN IF NOT EXISTS email VARCHAR(160) NULL;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS province VARCHAR(50) NULL;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS ward VARCHAR(20) NULL;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS address VARCHAR(255) NULL;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS language ENUM('en','ne') NOT NULL DEFAULT 'en';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+CREATE TABLE IF NOT EXISTS hospital_announcements (
+  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  hospital_id INT UNSIGNED NOT NULL,
+  title VARCHAR(180) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(hospital_id) REFERENCES hospitals(id) ON DELETE CASCADE
+);
+
+INSERT IGNORE INTO users(full_name,mobile,password_hash,role)
+VALUES ('System Administrator','9800000000','$2y$10$dRD/eNRZyjAniNmMJRT1z.xxkN4djxLkd1U6E2Z2U0.vdk73JdLE2','admin');
